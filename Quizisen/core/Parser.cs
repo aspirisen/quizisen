@@ -17,7 +17,7 @@ namespace Quizisen.core
         private Document doc;
         private HtmlDocument html = new HtmlDocument();
         private Stack<MoodleXmlElement> moodleXmlElementsStack = new Stack<MoodleXmlElement>();
-        
+
         public Parser(Document doc)
         {
             this.doc = doc;
@@ -69,14 +69,19 @@ namespace Quizisen.core
 
                 if (parentType.Equals(relatedTo.To) || parentType.IsSubclassOf(relatedTo.To))
                 {
-                    this.notifyRelatedElementProperties(parentType, parentElement, child);
+                    bool found = this.notifyRelatedElementProperties(parentType, parentElement, child);
+                    if (found)
+                    {
+                        break;
+                    }
                 }
             }
         }
 
-        private void notifyRelatedElementProperties(Type parentType, MoodleXmlElement parentElement, MoodleXmlElement child)
+        private bool notifyRelatedElementProperties(Type parentType, MoodleXmlElement parentElement, MoodleXmlElement child)
         {
             PropertyInfo[] properties = parentType.GetProperties();
+            bool found = false;
 
             foreach (PropertyInfo property in properties)
             {
@@ -86,10 +91,12 @@ namespace Quizisen.core
                 {
                     List<MoodleXmlElement> includedElements = (List<MoodleXmlElement>)property.GetValue(parentElement);
                     includedElements.Add(child);
+                    found = true;
                     break;
                 }
             }
 
+            return found;
         }
 
         private string saveDocumentAsHtml(Document doc)
@@ -107,10 +114,10 @@ namespace Quizisen.core
             tempDoc.Content.Paste();
 
             //tempDoc.SaveAs(path,
-            // format, ref oMissing, ref oMissing,
-            // ref oMissing, ref oMissing, ref oMissing, ref oMissing,
-            // ref oMissing, ref oMissing, ref oMissing, ref oMissing,
-            // ref oMissing, ref oMissing, ref oMissing, ref oMissing);
+            //  format, ref oMissing, ref oMissing,
+            //  ref oMissing, ref oMissing, ref oMissing, ref oMissing,
+            //  ref oMissing, ref oMissing, ref oMissing, ref oMissing,
+            //  ref oMissing, ref oMissing, ref oMissing, ref oMissing);
 
             (tempDoc as _Document).Close(false);
             (wordApp as _Application).Quit(false);
