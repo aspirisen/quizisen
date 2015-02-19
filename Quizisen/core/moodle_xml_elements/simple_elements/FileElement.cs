@@ -50,15 +50,21 @@ namespace Quizisen.core.moodle_xml_elements
             string path = folder + System.IO.Path.DirectorySeparatorChar + this.HtmlNode.Attributes["src"].Value;
             this.Content = FileToBase64(path);
             this.name = System.IO.Path.GetFileName(path);
-
-            this.HtmlNode.Attributes["src"].Value = @"@@PLUGINFILE@@/" + this.name;
         }
 
         public override XmlElement toXml(XmlDocument doc)
         {
-            XmlElement result = base.toXml(doc);
-            result.InnerText = this.Content;
-            return result;
+            try
+            {
+                XmlElement result = base.toXml(doc);
+                this.xmlElement.InnerText = this.Content;
+            }
+            catch (DirectoryNotFoundException)
+            {
+                this.xmlElement = null;
+            }
+
+            return this.xmlElement;
         }
 
         private string FileToBase64(string path)

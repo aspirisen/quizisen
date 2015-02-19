@@ -13,9 +13,16 @@ namespace Quizisen.core.moodle_xml_elements
     abstract class MoodleXmlElement
     {
         private HtmlNode htmlNode;
-        private XmlElement xmlElement;
+        protected XmlElement xmlElement;
         private XmlDocument doc;
         private List<MoodleXmlElement> fileElements = new List<MoodleXmlElement>();
+
+        public HtmlNode HtmlNode
+        {
+            get { return htmlNode; }
+            set { htmlNode = value; }
+        }
+
 
         [MoodleXmlElementAttribute(Children = true)]
         public List<MoodleXmlElement> FileElements
@@ -24,17 +31,11 @@ namespace Quizisen.core.moodle_xml_elements
             set { fileElements = value; }
         }
 
-        public HtmlNode HtmlNode
-        {
-            get { return htmlNode; }
-            set { htmlNode = value; }
-        }
-
         public virtual void prepareData()
         {
             if (this.HtmlNode != null)
             {
-                HtmlNodeCollection images = this.HtmlNode.SelectNodes("img");
+                var images = this.HtmlNode.Descendants("img");
                 foreach (HtmlNode img in images)
                 {
                     FileElement file = new FileElement();
@@ -78,7 +79,15 @@ namespace Quizisen.core.moodle_xml_elements
                 List<MoodleXmlElement> children = (List<MoodleXmlElement>)property.GetValue(this);
                 foreach (MoodleXmlElement child in children)
                 {
-                    this.xmlElement.AppendChild(child.toXml(this.doc));
+                    if (child != null)
+                    {
+                        XmlElement el = child.toXml(this.doc);
+
+                        if (el != null)
+                        {
+                            this.xmlElement.AppendChild(el);
+                        }
+                    }
                 }
             }
 

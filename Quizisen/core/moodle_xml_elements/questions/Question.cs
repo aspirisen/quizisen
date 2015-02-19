@@ -47,7 +47,7 @@ namespace Quizisen.core.moodle_xml_elements
         public override void prepareData()
         {
             this.Name.HtmlNode = this.HtmlNode;
-            this.Questiontext.HtmlNode = this.HtmlNode;
+            this.Questiontext.HtmlNode = this.HtmlNode.CloneNode(true);
             base.prepareData();
         }
     }
