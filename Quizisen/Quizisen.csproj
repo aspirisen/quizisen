@@ -167,6 +167,7 @@
     <Compile Include="core\moodle_xml_elements\attributes\MoodleXmlElementAttribute.cs" />
     <Compile Include="core\moodle_xml_elements\attributes\RelationAttribute.cs" />
     <Compile Include="core\moodle_xml_elements\MoodleXmlElement.cs" />
+    <Compile Include="core\moodle_xml_elements\simple_elements\FileElement.cs" />
     <Compile Include="core\moodle_xml_elements\simple_elements\Single.cs" />
     <Compile Include="core\moodle_xml_elements\simple_elements\Name.cs" />
     <Compile Include="core\moodle_xml_elements\questions\Choice.cs" />

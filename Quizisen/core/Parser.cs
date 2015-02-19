@@ -17,6 +17,13 @@ namespace Quizisen.core
         private Document doc;
         private HtmlDocument html = new HtmlDocument();
         private Stack<MoodleXmlElement> moodleXmlElementsStack = new Stack<MoodleXmlElement>();
+        private static string path;
+
+        public static string Path
+        {
+            get { return path; }
+            set { path = value; }
+        }
 
         public Parser(Document doc)
         {
@@ -25,7 +32,7 @@ namespace Quizisen.core
 
         public void parse()
         {
-            string path = this.saveDocumentAsHtml(this.doc);
+            Path = this.saveDocumentAsHtml(this.doc);
             this.html.Load(path);
 
             Quiz quiz = new Quiz();
@@ -102,7 +109,7 @@ namespace Quizisen.core
         private string saveDocumentAsHtml(Document doc)
         {
             string tempRoot = System.IO.Path.GetTempPath();
-            string path = tempRoot + @"\" + doc.Name + ".htm";
+            Path = tempRoot + @"\" + doc.Name + ".htm";
             object oMissing = System.Reflection.Missing.Value;
 
             WdSaveFormat format = WdSaveFormat.wdFormatFilteredHTML;
