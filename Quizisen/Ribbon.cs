@@ -5,6 +5,8 @@ using System.Text;
 using Microsoft.Office.Tools.Ribbon;
 using Microsoft.Office.Interop.Word;
 using Quizisen.core;
+using System.Windows.Forms;
+using System.IO;
 
 namespace Quizisen
 {
@@ -17,9 +19,14 @@ namespace Quizisen
 
         private void parse_Click(object sender, RibbonControlEventArgs e)
         {
-            Document doc = Globals.ThisAddIn.Application.ActiveDocument;
-            Parser parser = new Parser(doc);
-            parser.parse();
+            DialogResult result = saveFileDialog.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                Document doc = Globals.ThisAddIn.Application.ActiveDocument;
+                Parser parser = new Parser(doc);
+                parser.parse(saveFileDialog.FileName);
+            }
         }
     }
 }

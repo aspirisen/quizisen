@@ -30,7 +30,7 @@ namespace Quizisen.core
             this.doc = doc;
         }
 
-        public void parse()
+        public void parse(string savePath)
         {
             Path = this.saveDocumentAsHtml(this.doc);
             this.html.Load(path);
@@ -41,7 +41,7 @@ namespace Quizisen.core
 
             XmlDocument moodleXmlOut = new XmlDocument();
             moodleXmlOut.AppendChild(quiz.toXml(moodleXmlOut));
-            moodleXmlOut.Save(@"D:\C#\quizisen\Quizisen\bin\Debug\out.xml");
+            moodleXmlOut.Save(savePath);
         }
 
         private void populateQuizByHtml()

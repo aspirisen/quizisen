@@ -37,6 +37,7 @@
             this.tab1 = this.Factory.CreateRibbonTab();
             this.group1 = this.Factory.CreateRibbonGroup();
             this.parse = this.Factory.CreateRibbonButton();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
             // 
@@ -59,6 +60,12 @@
             this.parse.Name = "parse";
             this.parse.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.parse_Click);
             // 
+            // saveFileDialog
+            // 
+            this.saveFileDialog.DefaultExt = "xml";
+            this.saveFileDialog.Filter = "MoodleXML | .xml";
+            this.saveFileDialog.Title = "Save Moodle XML";
+            // 
             // Ribbon
             // 
             this.Name = "Ribbon";
@@ -77,6 +84,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonTab tab1;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group1;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton parse;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 
     partial class ThisRibbonCollection
