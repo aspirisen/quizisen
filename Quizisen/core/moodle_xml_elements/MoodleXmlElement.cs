@@ -33,7 +33,7 @@ namespace Quizisen.core.moodle_xml_elements
 
         public virtual void prepareData()
         {
-            if (this.HtmlNode != null)
+            if (MoodleXmlElementAttribute.get(this.GetType()).HasFiles)
             {
                 var images = this.HtmlNode.Descendants("img");
                 foreach (HtmlNode img in images)

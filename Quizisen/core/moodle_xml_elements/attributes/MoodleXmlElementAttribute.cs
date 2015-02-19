@@ -11,10 +11,17 @@ namespace Quizisen.core.moodle_xml_elements.attributes
     class MoodleXmlElementAttribute : Attribute
     {
         private string name;
-        private bool children;
-        private bool attribute;
-        private bool node;
-        private bool content;
+        private bool children = false;
+        private bool attribute = false;
+        private bool node = false;
+        private bool content = false;
+        private bool hasFiles = false;
+
+        public bool HasFiles
+        {
+            get { return hasFiles; }
+            set { hasFiles = value; }
+        }
 
         public string Name
         {

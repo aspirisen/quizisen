@@ -41,7 +41,7 @@ namespace Quizisen.core
 
             XmlDocument moodleXmlOut = new XmlDocument();
             moodleXmlOut.AppendChild(quiz.toXml(moodleXmlOut));
-            moodleXmlOut.Save(@"./out.xml");
+            moodleXmlOut.Save(@"D:\C#\quizisen\Quizisen\bin\Debug\out.xml");
         }
 
         private void populateQuizByHtml()
@@ -120,11 +120,11 @@ namespace Quizisen.core
             Document tempDoc = wordApp.Documents.Add();
             tempDoc.Content.Paste();
 
-            //tempDoc.SaveAs(path,
-            //  format, ref oMissing, ref oMissing,
-            //  ref oMissing, ref oMissing, ref oMissing, ref oMissing,
-            //  ref oMissing, ref oMissing, ref oMissing, ref oMissing,
-            //  ref oMissing, ref oMissing, ref oMissing, ref oMissing);
+            tempDoc.SaveAs(path,
+              format, ref oMissing, ref oMissing,
+              ref oMissing, ref oMissing, ref oMissing, ref oMissing,
+              ref oMissing, ref oMissing, ref oMissing, ref oMissing,
+              ref oMissing, ref oMissing, ref oMissing, ref oMissing);
 
             (tempDoc as _Document).Close(false);
             (wordApp as _Application).Quit(false);

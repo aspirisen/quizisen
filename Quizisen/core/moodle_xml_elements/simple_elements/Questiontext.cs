@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Quizisen.core.moodle_xml_elements
 {
-    [MoodleXmlElementAttribute(Name = "questiontext")]
+    [MoodleXmlElementAttribute(Name = "questiontext", HasFiles = true)]
     class Questiontext : MoodleXmlElement
     {
         private Text text = new Text();

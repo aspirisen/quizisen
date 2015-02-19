@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Quizisen.core.moodle_xml_elements
 {
     [Relation(To = typeof(Quiz), ParentPropertyName = "questions")]
-    [MoodleXmlElementAttribute(Name = "question")]
+    [MoodleXmlElementAttribute(Name = "question", HasFiles = true)]
     class Question : MoodleXmlElement
     {
         private List<MoodleXmlElement> answers = new List<MoodleXmlElement>();
