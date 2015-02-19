@@ -26,6 +26,8 @@ namespace Quizisen.core.moodle_xml_elements
             {
                 this.Content = this.HtmlNode.InnerHtml;
             }
+
+            base.prepareData();
         }
     }
 }

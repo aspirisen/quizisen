@@ -22,6 +22,7 @@ namespace Quizisen.core.moodle_xml_elements
         public override void prepareData()
         {
             this.Text.HtmlNode = this.HtmlNode;
+            base.prepareData();
         }
     }
 }

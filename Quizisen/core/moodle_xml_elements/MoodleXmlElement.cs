@@ -15,6 +15,14 @@ namespace Quizisen.core.moodle_xml_elements
         private HtmlNode htmlNode;
         private XmlElement xmlElement;
         private XmlDocument doc;
+        private List<MoodleXmlElement> fileElements = new List<MoodleXmlElement>();
+
+        [MoodleXmlElementAttribute(Children = true)]
+        public List<MoodleXmlElement> FileElements
+        {
+            get { return fileElements; }
+            set { fileElements = value; }
+        }
 
         public HtmlNode HtmlNode
         {
@@ -22,7 +30,19 @@ namespace Quizisen.core.moodle_xml_elements
             set { htmlNode = value; }
         }
 
-        public abstract void prepareData();
+        public virtual void prepareData()
+        {
+            if (this.HtmlNode != null)
+            {
+                HtmlNodeCollection images = this.HtmlNode.SelectNodes("img");
+                foreach (HtmlNode img in images)
+                {
+                    FileElement file = new FileElement();
+                    file.HtmlNode = img;
+                    this.FileElements.Add(file);
+                }
+            }
+        }
 
         public virtual XmlElement toXml(XmlDocument doc)
         {

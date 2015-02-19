@@ -56,7 +56,7 @@ namespace Quizisen.core.moodle_xml_elements
 
         public override XmlElement toXml(XmlDocument doc)
         {
-            XmlElement result = doc.CreateElement("file");
+            XmlElement result = base.toXml(doc);
             result.InnerText = this.Content;
             return result;
         }

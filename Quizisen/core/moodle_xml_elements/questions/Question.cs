@@ -48,6 +48,7 @@ namespace Quizisen.core.moodle_xml_elements
         {
             this.Name.HtmlNode = this.HtmlNode;
             this.Questiontext.HtmlNode = this.HtmlNode;
+            base.prepareData();
         }
     }
 }
