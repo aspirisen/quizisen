@@ -10,6 +10,20 @@ namespace Quizisen.core.moodle_xml_elements
 {
     class Choice : Question
     {
+        private static Style style;
+
+        public static Style Style
+        {
+            get { return style; }
+        }
+
+        public static void addStyle(Document doc)
+        {
+            style = doc.Styles.Add("Choice", WdStyleType.wdStyleTypeParagraph);
+            style.set_BaseStyle(WdBuiltinStyle.wdStyleHeading1);
+            style.Font.TextColor.RGB = 0x03A9F4;
+        }
+
         private Single single = new Single();
 
         [MoodleXmlElementAttribute(Node = true)]
@@ -18,14 +32,7 @@ namespace Quizisen.core.moodle_xml_elements
             get { return single; }
             set { single = value; }
         }
-
-        public static void addStyle(Document doc)
-        {
-            Style style = doc.Styles.Add("Choice", WdStyleType.wdStyleTypeParagraph);
-            style.set_BaseStyle(WdBuiltinStyle.wdStyleHeading1);
-            style.Font.TextColor.RGB = 0x03A9F4;
-        }
-
+        
         public override void prepareData()
         {
             this.Type = "multichoice";

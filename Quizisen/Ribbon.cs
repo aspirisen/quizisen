@@ -7,6 +7,7 @@ using Microsoft.Office.Interop.Word;
 using Quizisen.core;
 using System.Windows.Forms;
 using System.IO;
+using Quizisen.core.moodle_xml_elements;
 
 namespace Quizisen
 {
@@ -26,6 +27,30 @@ namespace Quizisen
                 Document doc = Globals.ThisAddIn.Application.ActiveDocument;
                 Parser parser = new Parser(doc);
                 parser.parse(saveFileDialog.FileName);
+            }
+        }
+
+        private void markAsRightAnswer_Click(object sender, RibbonControlEventArgs e)
+        {
+            this.markSelection(RightAnswer.Style);
+        }
+
+        private void markAsWrongAnswer_Click(object sender, RibbonControlEventArgs e)
+        {
+            this.markSelection(WrongAnswer.Style);
+        }
+
+        private void markAsChoiceQuestion_Click(object sender, RibbonControlEventArgs e)
+        {
+            this.markSelection(Choice.Style);
+        }
+
+        private void markSelection(Style style)
+        {
+            Selection selection = Globals.ThisAddIn.Application.Selection;
+            if (selection != null && selection.Range != null)
+            {
+                selection.set_Style(style);
             }
         }
     }
