@@ -34,7 +34,7 @@ namespace Quizisen.core
 
             XmlDocument moodleXmlOut = new XmlDocument();
             moodleXmlOut.AppendChild(quiz.toXml(moodleXmlOut));
-            moodleXmlOut.Save(@"E:\data\Dima\Development\Quizisen\Quizisen\bin\Debug\out.xml");
+            moodleXmlOut.Save(@"./out.xml");
         }
 
         private void populateQuizByHtml()

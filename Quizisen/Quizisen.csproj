@@ -167,13 +167,13 @@
     <Compile Include="core\moodle_xml_elements\attributes\MoodleXmlElementAttribute.cs" />
     <Compile Include="core\moodle_xml_elements\attributes\RelationAttribute.cs" />
     <Compile Include="core\moodle_xml_elements\MoodleXmlElement.cs" />
-    <Compile Include="core\moodle_xml_elements\single\Single.cs" />
-    <Compile Include="core\moodle_xml_elements\single\Name.cs" />
+    <Compile Include="core\moodle_xml_elements\simple_elements\Single.cs" />
+    <Compile Include="core\moodle_xml_elements\simple_elements\Name.cs" />
     <Compile Include="core\moodle_xml_elements\questions\Choice.cs" />
     <Compile Include="core\moodle_xml_elements\questions\Question.cs" />
-    <Compile Include="core\moodle_xml_elements\Questiontext.cs" />
+    <Compile Include="core\moodle_xml_elements\simple_elements\Questiontext.cs" />
     <Compile Include="core\moodle_xml_elements\Quiz.cs" />
-    <Compile Include="core\moodle_xml_elements\single\Text.cs" />
+    <Compile Include="core\moodle_xml_elements\simple_elements\Text.cs" />
     <Compile Include="core\Parser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
