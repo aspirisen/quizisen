@@ -114,12 +114,12 @@ namespace Quizisen.core
 
             WdSaveFormat format = WdSaveFormat.wdFormatFilteredHTML;
 
-            doc.Content.Copy();
-
             Application wordApp = new Microsoft.Office.Interop.Word.Application();
             Document tempDoc = wordApp.Documents.Add();
-            tempDoc.Content.Paste();
 
+            tempDoc.Range().InsertXML(doc.WordOpenXML);
+
+            this.removeStyleColors(tempDoc);
             tempDoc.SaveAs(path,
               format, ref oMissing, ref oMissing,
               ref oMissing, ref oMissing, ref oMissing, ref oMissing,
@@ -132,6 +132,14 @@ namespace Quizisen.core
             wordApp = null;
 
             return path;
+        }
+
+        private void removeStyleColors(Document doc)
+        {
+            foreach (Style style in doc.Styles)
+            {
+                style.Font.TextColor.RGB = 0x000000;
+            }
         }
     }
 }
