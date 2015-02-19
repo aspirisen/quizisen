@@ -34,19 +34,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tab1 = this.Factory.CreateRibbonTab();
+            this.mainTab = this.Factory.CreateRibbonTab();
             this.group1 = this.Factory.CreateRibbonGroup();
             this.parse = this.Factory.CreateRibbonButton();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.tab1.SuspendLayout();
+            this.mainTab.SuspendLayout();
             this.group1.SuspendLayout();
             // 
-            // tab1
+            // mainTab
             // 
-            this.tab1.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
-            this.tab1.Groups.Add(this.group1);
-            this.tab1.Label = "TabAddIns";
-            this.tab1.Name = "tab1";
+            this.mainTab.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
+            this.mainTab.Groups.Add(this.group1);
+            this.mainTab.Label = "Quizisen";
+            this.mainTab.Name = "mainTab";
             // 
             // group1
             // 
@@ -70,10 +70,10 @@
             // 
             this.Name = "Ribbon";
             this.RibbonType = "Microsoft.Word.Document";
-            this.Tabs.Add(this.tab1);
+            this.Tabs.Add(this.mainTab);
             this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.Ribbon_Load);
-            this.tab1.ResumeLayout(false);
-            this.tab1.PerformLayout();
+            this.mainTab.ResumeLayout(false);
+            this.mainTab.PerformLayout();
             this.group1.ResumeLayout(false);
             this.group1.PerformLayout();
 
@@ -81,7 +81,7 @@
 
         #endregion
 
-        internal Microsoft.Office.Tools.Ribbon.RibbonTab tab1;
+        internal Microsoft.Office.Tools.Ribbon.RibbonTab mainTab;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group1;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton parse;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
