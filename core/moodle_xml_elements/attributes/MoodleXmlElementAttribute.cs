@@ -61,7 +61,12 @@ namespace Quizisen.core.moodle_xml_elements.attributes
 
         public static MoodleXmlElementAttribute get(PropertyInfo property)
         {
-            return (MoodleXmlElementAttribute)property.GetCustomAttribute(typeof(MoodleXmlElementAttribute));
+            MoodleXmlElementAttribute[] attrs = (MoodleXmlElementAttribute[])property.GetCustomAttributes(typeof(MoodleXmlElementAttribute), true);
+
+            if (attrs.Length > 0)
+                return attrs[0];
+            else
+                return null;
         }
     }
 }

@@ -35,12 +35,15 @@ namespace Quizisen.core.moodle_xml_elements
         {
             if (MoodleXmlElementAttribute.get(this.GetType()).HasFiles)
             {
-                var images = this.HtmlNode.Descendants("img");
-                foreach (HtmlNode img in images)
+                var images = this.HtmlNode.SelectNodes("//img");
+                if (images != null)
                 {
-                    FileElement file = new FileElement();
-                    file.HtmlNode = img;
-                    this.FileElements.Add(file);
+                    foreach (HtmlNode img in images)
+                    {
+                        FileElement file = new FileElement();
+                        file.HtmlNode = img;
+                        this.FileElements.Add(file);
+                    }
                 }
             }
         }
@@ -71,12 +74,12 @@ namespace Quizisen.core.moodle_xml_elements
         {
             if (attribute.Attr)
             {
-                this.xmlElement.SetAttribute(property.Name.ToLower(), property.GetValue(this).ToString());
+                this.xmlElement.SetAttribute(property.Name.ToLower(), property.GetValue(this, null).ToString());
             }
 
             if (attribute.Children)
             {
-                List<MoodleXmlElement> children = (List<MoodleXmlElement>)property.GetValue(this);
+                List<MoodleXmlElement> children = (List<MoodleXmlElement>)property.GetValue(this, null);
                 foreach (MoodleXmlElement child in children)
                 {
                     if (child != null)
@@ -93,7 +96,7 @@ namespace Quizisen.core.moodle_xml_elements
 
             if (attribute.Node)
             {
-                MoodleXmlElement childNode = (MoodleXmlElement)property.GetValue(this);
+                MoodleXmlElement childNode = (MoodleXmlElement)property.GetValue(this, null);
                 this.xmlElement.AppendChild(childNode.toXml(this.doc));
             }
 

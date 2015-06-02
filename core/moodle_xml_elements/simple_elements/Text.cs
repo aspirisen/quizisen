@@ -24,6 +24,8 @@ namespace Quizisen.core.moodle_xml_elements
 
         public override void prepareData()
         {
+            base.prepareData();
+
             if (this.HtmlNode != null)
             {
                 HtmlNode nodeClone = this.HtmlNode.CloneNode(true);
@@ -31,15 +33,19 @@ namespace Quizisen.core.moodle_xml_elements
                 this.Content = nodeClone.InnerHtml;
             }
 
-            base.prepareData();
         }
 
         public void changeImgSrc(HtmlNode node)
         {
-            var images = node.Descendants("img");
-            foreach (HtmlNode img in images)
+            var images = node.SelectNodes("//img");
+            if (images != null)
             {
-                img.Attributes["src"].Value = @"@@PLUGINFILE@@/" + Path.GetFileName(img.Attributes["src"].Value);
+                foreach (HtmlNode img in images)
+                {
+                    string originalSrc = img.Attributes["src"].Value.ToString();
+                    img.Attributes.Append("original", originalSrc);
+                    img.Attributes["src"].Value = @"@@PLUGINFILE@@/" + Path.GetFileName(img.Attributes["src"].Value);
+                }
             }
         }
     }

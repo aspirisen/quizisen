@@ -96,7 +96,7 @@ namespace Quizisen.core
 
                 if (xmlAttributes != null && xmlAttributes.Children == true)
                 {
-                    List<MoodleXmlElement> includedElements = (List<MoodleXmlElement>)property.GetValue(parentElement);
+                    List<MoodleXmlElement> includedElements = (List<MoodleXmlElement>)property.GetValue(parentElement, null);
                     includedElements.Add(child);
                     found = true;
                     break;

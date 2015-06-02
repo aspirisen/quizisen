@@ -88,7 +88,6 @@
             // 
             // markAsRightAnswer
             // 
-            this.markAsRightAnswer.Image = global::Quizisen.Properties.Resources.rightAnswer;
             this.markAsRightAnswer.Label = "Верный ответ";
             this.markAsRightAnswer.Name = "markAsRightAnswer";
             this.markAsRightAnswer.ShowImage = true;
@@ -96,7 +95,6 @@
             // 
             // markAsWrongAnswer
             // 
-            this.markAsWrongAnswer.Image = global::Quizisen.Properties.Resources.wrongAnswer;
             this.markAsWrongAnswer.Label = "Неверный ответ";
             this.markAsWrongAnswer.Name = "markAsWrongAnswer";
             this.markAsWrongAnswer.ShowImage = true;
@@ -109,7 +107,6 @@
             // 
             // markAsChoiceQuestion
             // 
-            this.markAsChoiceQuestion.Image = global::Quizisen.Properties.Resources.choice;
             this.markAsChoiceQuestion.Label = "Множественный \\ Одиночный выбор";
             this.markAsChoiceQuestion.Name = "markAsChoiceQuestion";
             this.markAsChoiceQuestion.ShowImage = true;

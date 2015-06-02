@@ -47,7 +47,7 @@ namespace Quizisen.core.moodle_xml_elements
         public override void prepareData()
         {
             string folder = System.IO.Path.GetDirectoryName(Parser.Path);
-            string path = folder + System.IO.Path.DirectorySeparatorChar + this.HtmlNode.Attributes["src"].Value;
+            string path = folder + System.IO.Path.DirectorySeparatorChar + this.HtmlNode.Attributes[3].Value;
             this.Content = FileToBase64(path);
             this.name = System.IO.Path.GetFileName(path);
         }

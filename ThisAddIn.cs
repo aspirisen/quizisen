@@ -29,18 +29,18 @@ namespace Quizisen
             WrongAnswer.addStyle(doc);
         }
 
-        #region Код, автоматически созданный VSTO
+        #region VSTO generated code
 
         /// <summary>
-        /// Обязательный метод для поддержки конструктора - не изменяйте
-        /// содержимое данного метода при помощи редактора кода.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InternalStartup()
         {
             this.Startup += new System.EventHandler(ThisAddIn_Startup);
             this.Shutdown += new System.EventHandler(ThisAddIn_Shutdown);
         }
-
+        
         #endregion
     }
 }
