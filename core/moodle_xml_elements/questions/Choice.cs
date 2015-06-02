@@ -67,6 +67,7 @@ namespace Quizisen.core.moodle_xml_elements
                 }
             }
         }
+
         private int countRightAnswers()
         {
             int rightAnswers = 0;

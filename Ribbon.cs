@@ -18,6 +18,15 @@ namespace Quizisen
 
         }
 
+        private void markSelection(Style style)
+        {
+            Selection selection = Globals.ThisAddIn.Application.Selection;
+            if (selection != null && selection.Range != null)
+            {
+                selection.set_Style(style);
+            }
+        }
+
         private void parse_Click(object sender, RibbonControlEventArgs e)
         {
             DialogResult result = saveFileDialog.ShowDialog();
@@ -45,13 +54,9 @@ namespace Quizisen
             this.markSelection(Choice.Style);
         }
 
-        private void markSelection(Style style)
+        private void truefalse_Click(object sender, RibbonControlEventArgs e)
         {
-            Selection selection = Globals.ThisAddIn.Application.Selection;
-            if (selection != null && selection.Range != null)
-            {
-                selection.set_Style(style);
-            }
+            this.markSelection(TrueFalse.Style);
         }
     }
 }

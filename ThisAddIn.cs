@@ -27,6 +27,7 @@ namespace Quizisen
             Choice.addStyle(doc);
             RightAnswer.addStyle(doc);
             WrongAnswer.addStyle(doc);
+            TrueFalse.addStyle(doc);
         }
 
         #region VSTO generated code

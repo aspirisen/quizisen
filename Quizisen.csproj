@@ -189,6 +189,7 @@
     <Compile Include="core\moodle_xml_elements\MoodleXmlElement.cs" />
     <Compile Include="core\moodle_xml_elements\questions\Choice.cs" />
     <Compile Include="core\moodle_xml_elements\questions\Question.cs" />
+    <Compile Include="core\moodle_xml_elements\questions\TrueFalse.cs" />
     <Compile Include="core\moodle_xml_elements\Quiz.cs" />
     <Compile Include="core\moodle_xml_elements\simple_elements\FileElement.cs" />
     <Compile Include="core\moodle_xml_elements\simple_elements\Name.cs" />
@@ -208,6 +209,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Ribbon.resx">
+      <DependentUpon>Ribbon.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
