@@ -28,6 +28,7 @@ namespace Quizisen
             RightAnswer.addStyle(doc);
             WrongAnswer.addStyle(doc);
             TrueFalse.addStyle(doc);
+            Essay.addStyle(doc);
         }
 
         #region VSTO generated code

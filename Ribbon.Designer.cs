@@ -43,8 +43,9 @@
             this.markAsWrongAnswer = this.Factory.CreateRibbonButton();
             this.box2 = this.Factory.CreateRibbonBox();
             this.markAsChoiceQuestion = this.Factory.CreateRibbonButton();
-            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.truefalse = this.Factory.CreateRibbonButton();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.essay = this.Factory.CreateRibbonButton();
             this.mainTab.SuspendLayout();
             this.group1.SuspendLayout();
             this.group2.SuspendLayout();
@@ -105,6 +106,7 @@
             // 
             this.box2.Items.Add(this.markAsChoiceQuestion);
             this.box2.Items.Add(this.truefalse);
+            this.box2.Items.Add(this.essay);
             this.box2.Name = "box2";
             // 
             // markAsChoiceQuestion
@@ -114,18 +116,25 @@
             this.markAsChoiceQuestion.ShowImage = true;
             this.markAsChoiceQuestion.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.markAsChoiceQuestion_Click);
             // 
-            // saveFileDialog
-            // 
-            this.saveFileDialog.DefaultExt = "xml";
-            this.saveFileDialog.Filter = "MoodleXML | *.xml";
-            this.saveFileDialog.Title = "Save Moodle XML";
-            // 
             // truefalse
             // 
             this.truefalse.Label = "Истина \\ Ложь";
             this.truefalse.Name = "truefalse";
             this.truefalse.ShowImage = true;
             this.truefalse.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.truefalse_Click);
+            // 
+            // saveFileDialog
+            // 
+            this.saveFileDialog.DefaultExt = "xml";
+            this.saveFileDialog.Filter = "MoodleXML | *.xml";
+            this.saveFileDialog.Title = "Save Moodle XML";
+            // 
+            // essay
+            // 
+            this.essay.Label = "Эссе";
+            this.essay.Name = "essay";
+            this.essay.ShowImage = true;
+            this.essay.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.essay_Click);
             // 
             // Ribbon
             // 
@@ -159,6 +168,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonBox box2;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton markAsChoiceQuestion;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton truefalse;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton essay;
     }
 
     partial class ThisRibbonCollection

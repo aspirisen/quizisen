@@ -190,6 +190,7 @@
     <Compile Include="core\moodle_xml_elements\questions\Choice.cs" />
     <Compile Include="core\moodle_xml_elements\questions\Question.cs" />
     <Compile Include="core\moodle_xml_elements\questions\TrueFalse.cs" />
+    <Compile Include="core\moodle_xml_elements\questions\Essay.cs" />
     <Compile Include="core\moodle_xml_elements\Quiz.cs" />
     <Compile Include="core\moodle_xml_elements\simple_elements\FileElement.cs" />
     <Compile Include="core\moodle_xml_elements\simple_elements\Name.cs" />

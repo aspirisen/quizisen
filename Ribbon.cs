@@ -58,5 +58,10 @@ namespace Quizisen
         {
             this.markSelection(TrueFalse.Style);
         }
+
+        private void essay_Click(object sender, RibbonControlEventArgs e)
+        {
+            this.markSelection(Essay.Style);
+        }
     }
 }
