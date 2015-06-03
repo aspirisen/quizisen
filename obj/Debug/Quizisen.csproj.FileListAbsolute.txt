@@ -12,3 +12,15 @@ C:\Documents and Settings\Dima\Рабочий стол\Quizisen\obj\Debug\Quizis
 C:\Documents and Settings\Dima\Рабочий стол\Quizisen\obj\Debug\Quizisen.pdb
 C:\Documents and Settings\Dima\Рабочий стол\Quizisen\bin\Debug\HtmlAgilityPack.dll
 C:\Documents and Settings\Dima\Рабочий стол\Quizisen\obj\Debug\Quizisen.Ribbon.resources
+E:\data\Dima\Development\quizisen\bin\Debug\Quizisen.dll
+E:\data\Dima\Development\quizisen\bin\Debug\Quizisen.pdb
+E:\data\Dima\Development\quizisen\bin\Debug\Quizisen.dll.manifest
+E:\data\Dima\Development\quizisen\bin\Debug\Quizisen.vsto
+E:\data\Dima\Development\quizisen\bin\Debug\HtmlAgilityPack.dll
+E:\data\Dima\Development\quizisen\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+E:\data\Dima\Development\quizisen\obj\Debug\Quizisen.csprojResolveAssemblyReference.cache
+E:\data\Dima\Development\quizisen\obj\Debug\Quizisen.Properties.Resources.resources
+E:\data\Dima\Development\quizisen\obj\Debug\Quizisen.Ribbon.resources
+E:\data\Dima\Development\quizisen\obj\Debug\Quizisen.csproj.GenerateResource.Cache
+E:\data\Dima\Development\quizisen\obj\Debug\Quizisen.dll
+E:\data\Dima\Development\quizisen\obj\Debug\Quizisen.pdb

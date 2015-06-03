@@ -20,14 +20,7 @@ namespace Quizisen.core
 
             if (type != null)
             {
-                return result = (MoodleXmlElement)Activator.CreateInstance(type);
-            }
-
-            className = className.Remove(className.Length - 1);
-            type = Type.GetType(spaceName + className);
-            if (type != null)
-            {
-                return result = (MoodleXmlElement)Activator.CreateInstance(type);
+                result = (MoodleXmlElement)Activator.CreateInstance(type);
             }
 
             return result;

@@ -34,13 +34,15 @@ namespace Quizisen.core.moodle_xml_elements
         {
             foreach (Answer answer in this.Answers)
             {
-
                 if (answer is RightAnswer)
                 {
                     answer.Fraction = 100;
+                    answer.HtmlNode.InnerHtml = "true";
                 }
-
-                answer.HtmlNode.InnerHtml = answer.HtmlNode.InnerText.ToLower();
+                else
+                {
+                    answer.HtmlNode.InnerHtml = "false";
+                }
             }
         }
 

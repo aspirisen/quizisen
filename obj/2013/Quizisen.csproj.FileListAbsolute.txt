@@ -1,0 +1,11 @@
+E:\data\Dima\Development\quizisen\bin\2013\Quizisen.dll
+E:\data\Dima\Development\quizisen\bin\2013\Quizisen.pdb
+E:\data\Dima\Development\quizisen\bin\2013\Quizisen.dll.manifest
+E:\data\Dima\Development\quizisen\bin\2013\Quizisen.vsto
+E:\data\Dima\Development\quizisen\bin\2013\HtmlAgilityPack.dll
+E:\data\Dima\Development\quizisen\bin\2013\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+E:\data\Dima\Development\quizisen\obj\2013\Quizisen.Properties.Resources.resources
+E:\data\Dima\Development\quizisen\obj\2013\Quizisen.Ribbon.resources
+E:\data\Dima\Development\quizisen\obj\2013\Quizisen.csproj.GenerateResource.Cache
+E:\data\Dima\Development\quizisen\obj\2013\Quizisen.dll
+E:\data\Dima\Development\quizisen\obj\2013\Quizisen.pdb

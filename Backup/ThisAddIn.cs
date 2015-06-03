@@ -30,7 +30,7 @@ namespace Quizisen
         {
             this.Application.DocumentOpen += new Word.ApplicationEvents4_DocumentOpenEventHandler(this.addQuestionStyles);
             ((Word.ApplicationEvents4_Event)this.Application).NewDocument += new Word.ApplicationEvents4_NewDocumentEventHandler(this.addQuestionStyles);
-            this.application_startup();
+            this.Application.Startup += new Word.ApplicationEvents4_StartupEventHandler(this.application_startup);
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
