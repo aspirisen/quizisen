@@ -37,6 +37,11 @@ namespace Quizisen.core.moodle_xml_elements
                 if (answer is RightAnswer)
                 {
                     answer.Fraction = 100;
+                    answer.HtmlNode.InnerHtml = "true";
+                }
+                else
+                {
+                    answer.HtmlNode.InnerHtml = "false";
                 }
             }
         }
