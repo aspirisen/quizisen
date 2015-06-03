@@ -26,8 +26,18 @@ namespace Quizisen.core.moodle_xml_elements
             style.Font.TextColor.RGB = 0x03A9F4;
         }
 
+        private Text text = new Text();
+
+        [MoodleXmlElementAttribute(Node = true)]
+        public Text Text
+        {
+            get { return text; }
+            set { text = value; }
+        }
+
         public override void prepareData()
         {
+            this.Text.HtmlNode = this.HtmlNode.CloneNode(true);
             base.prepareData();
         }
 

@@ -24,15 +24,6 @@ namespace Quizisen.core.moodle_xml_elements
             style.Font.TextColor.RGB = 0xF32914;
         }
 
-        private Single single = new Single();
-
-        [MoodleXmlElementAttribute(Node = true)]
-        public Single Single
-        {
-            get { return single; }
-            set { single = value; }
-        }
-
         public override void prepareData()
         {
             this.Type = "matching";
