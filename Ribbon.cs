@@ -63,5 +63,20 @@ namespace Quizisen
         {
             this.markSelection(Essay.Style);
         }
+
+        private void matchingAnswer_Click(object sender, RibbonControlEventArgs e)
+        {
+            this.markSelection(MatchingAnswer.Style);
+        }
+
+        private void matching_Click(object sender, RibbonControlEventArgs e)
+        {
+            this.markSelection(Matching.Style);
+        }
+
+        private void questionMatching_Click(object sender, RibbonControlEventArgs e)
+        {
+            this.markSelection(Subquestion.Style);
+        }
     }
 }

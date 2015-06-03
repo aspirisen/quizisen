@@ -44,13 +44,18 @@
             this.box2 = this.Factory.CreateRibbonBox();
             this.markAsChoiceQuestion = this.Factory.CreateRibbonButton();
             this.truefalse = this.Factory.CreateRibbonButton();
-            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.essay = this.Factory.CreateRibbonButton();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.box3 = this.Factory.CreateRibbonBox();
+            this.matching = this.Factory.CreateRibbonButton();
+            this.questionMatching = this.Factory.CreateRibbonButton();
+            this.matchingAnswer = this.Factory.CreateRibbonButton();
             this.mainTab.SuspendLayout();
             this.group1.SuspendLayout();
             this.group2.SuspendLayout();
             this.box1.SuspendLayout();
             this.box2.SuspendLayout();
+            this.box3.SuspendLayout();
             // 
             // mainTab
             // 
@@ -78,6 +83,7 @@
             // 
             this.group2.Items.Add(this.box1);
             this.group2.Items.Add(this.box2);
+            this.group2.Items.Add(this.box3);
             this.group2.Label = "Вопросы";
             this.group2.Name = "group2";
             // 
@@ -86,6 +92,7 @@
             this.box1.BoxStyle = Microsoft.Office.Tools.Ribbon.RibbonBoxStyle.Vertical;
             this.box1.Items.Add(this.markAsRightAnswer);
             this.box1.Items.Add(this.markAsWrongAnswer);
+            this.box1.Items.Add(this.matchingAnswer);
             this.box1.Name = "box1";
             // 
             // markAsRightAnswer
@@ -123,18 +130,45 @@
             this.truefalse.ShowImage = true;
             this.truefalse.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.truefalse_Click);
             // 
-            // saveFileDialog
-            // 
-            this.saveFileDialog.DefaultExt = "xml";
-            this.saveFileDialog.Filter = "MoodleXML | *.xml";
-            this.saveFileDialog.Title = "Save Moodle XML";
-            // 
             // essay
             // 
             this.essay.Label = "Эссе";
             this.essay.Name = "essay";
             this.essay.ShowImage = true;
             this.essay.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.essay_Click);
+            // 
+            // saveFileDialog
+            // 
+            this.saveFileDialog.DefaultExt = "xml";
+            this.saveFileDialog.Filter = "MoodleXML | *.xml";
+            this.saveFileDialog.Title = "Save Moodle XML";
+            // 
+            // box3
+            // 
+            this.box3.Items.Add(this.matching);
+            this.box3.Items.Add(this.questionMatching);
+            this.box3.Name = "box3";
+            // 
+            // matching
+            // 
+            this.matching.Label = "Сопостовление";
+            this.matching.Name = "matching";
+            this.matching.ShowImage = true;
+            this.matching.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.matching_Click);
+            // 
+            // questionMatching
+            // 
+            this.questionMatching.Label = "Вопрос на сопостовление";
+            this.questionMatching.Name = "questionMatching";
+            this.questionMatching.ShowImage = true;
+            this.questionMatching.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.questionMatching_Click);
+            // 
+            // matchingAnswer
+            // 
+            this.matchingAnswer.Label = "Ответ на сопостовление";
+            this.matchingAnswer.Name = "matchingAnswer";
+            this.matchingAnswer.ShowImage = true;
+            this.matchingAnswer.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.matchingAnswer_Click);
             // 
             // Ribbon
             // 
@@ -152,6 +186,8 @@
             this.box1.PerformLayout();
             this.box2.ResumeLayout(false);
             this.box2.PerformLayout();
+            this.box3.ResumeLayout(false);
+            this.box3.PerformLayout();
 
         }
 
@@ -169,6 +205,10 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton markAsChoiceQuestion;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton truefalse;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton essay;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton matchingAnswer;
+        internal Microsoft.Office.Tools.Ribbon.RibbonBox box3;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton matching;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton questionMatching;
     }
 
     partial class ThisRibbonCollection

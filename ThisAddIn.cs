@@ -29,6 +29,10 @@ namespace Quizisen
             WrongAnswer.addStyle(doc);
             TrueFalse.addStyle(doc);
             Essay.addStyle(doc);
+
+            Matching.addStyle(doc);
+            Subquestion.addStyle(doc);
+            MatchingAnswer.addStyle(doc);
         }
 
         #region VSTO generated code
@@ -42,7 +46,7 @@ namespace Quizisen
             this.Startup += new System.EventHandler(ThisAddIn_Startup);
             this.Shutdown += new System.EventHandler(ThisAddIn_Shutdown);
         }
-        
+
         #endregion
     }
 }
