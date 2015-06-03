@@ -19,7 +19,7 @@ namespace Quizisen.core.moodle_xml_elements
         public static void addStyle(Document doc)
         {
             style = doc.Styles.Add("WrongAnswer", WdStyleType.wdStyleTypeParagraph);
-            style.Font.TextColor.RGB = 0xF44336;
+            style.Font.TextColor.RGB = 0x0000FF;
         }
     }
 }

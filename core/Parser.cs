@@ -3,6 +3,7 @@ using Microsoft.Office.Interop.Word;
 using Quizisen.core.moodle_xml_elements;
 using Quizisen.core.moodle_xml_elements.attributes;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -120,6 +121,12 @@ namespace Quizisen.core
             Document tempDoc = wordApp.Documents.Add();
             tempDoc.Content.Paste();
 
+            IEnumerator iterator = tempDoc.Styles.GetEnumerator();
+            while (iterator.MoveNext()) {
+                Style s = (Style)iterator.Current;
+                s.Font.TextColor.RGB = 0x000000;
+            }
+         
             tempDoc.SaveAs(path,
               format, ref oMissing, ref oMissing,
               ref oMissing, ref oMissing, ref oMissing, ref oMissing,

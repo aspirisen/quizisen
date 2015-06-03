@@ -22,8 +22,7 @@ namespace Quizisen.core.moodle_xml_elements
         public static void addStyle(Document doc)
         {
             style = doc.Styles.Add("Subquestion", WdStyleType.wdStyleTypeParagraph);
-            style.set_BaseStyle(WdBuiltinStyle.wdStyleHeading1);
-            style.Font.TextColor.RGB = 0x03A9F4;
+            style.Font.TextColor.RGB = 0xCDDC39;
         }
 
         private Text text = new Text();

@@ -19,7 +19,8 @@ namespace Quizisen.core.moodle_xml_elements
         public static void addStyle(Document doc)
         {
             style = doc.Styles.Add("MatchingAnswer", WdStyleType.wdStyleTypeParagraph);
-            style.Font.TextColor.RGB = 0x2443FF;
+            style.Font.TextColor.RGB = 0x673AB7;
+            style.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphRight;
         }
 
         public override void prepareData()

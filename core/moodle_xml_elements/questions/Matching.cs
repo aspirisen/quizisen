@@ -21,7 +21,7 @@ namespace Quizisen.core.moodle_xml_elements
         {
             style = doc.Styles.Add("Matching", WdStyleType.wdStyleTypeParagraph);
             style.set_BaseStyle(WdBuiltinStyle.wdStyleHeading1);
-            style.Font.TextColor.RGB = 0xF32914;
+            style.Font.TextColor.RGB = 0x00BCD4;
         }
 
         public override void prepareData()

@@ -20,7 +20,7 @@ namespace Quizisen.core.moodle_xml_elements
         {
             style = doc.Styles.Add("Essay", WdStyleType.wdStyleTypeParagraph);
             style.set_BaseStyle(WdBuiltinStyle.wdStyleHeading1);
-            style.Font.TextColor.RGB = 0x00A224;
+            style.Font.TextColor.RGB = 0x607D8B;
         }
 
         public override void prepareData()

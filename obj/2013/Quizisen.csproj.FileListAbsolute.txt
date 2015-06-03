@@ -9,3 +9,4 @@ E:\data\Dima\Development\quizisen\obj\2013\Quizisen.Ribbon.resources
 E:\data\Dima\Development\quizisen\obj\2013\Quizisen.csproj.GenerateResource.Cache
 E:\data\Dima\Development\quizisen\obj\2013\Quizisen.dll
 E:\data\Dima\Development\quizisen\obj\2013\Quizisen.pdb
+E:\data\Dima\Development\quizisen\obj\2013\Quizisen.csprojResolveAssemblyReference.cache

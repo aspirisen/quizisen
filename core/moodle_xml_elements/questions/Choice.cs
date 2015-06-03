@@ -21,7 +21,7 @@ namespace Quizisen.core.moodle_xml_elements
         {
             style = doc.Styles.Add("Choice", WdStyleType.wdStyleTypeParagraph);
             style.set_BaseStyle(WdBuiltinStyle.wdStyleHeading1);
-            style.Font.TextColor.RGB = 0x03A9F4;
+            style.Font.TextColor.RGB = 0xFFA000;
         }
 
         private Single single = new Single();
